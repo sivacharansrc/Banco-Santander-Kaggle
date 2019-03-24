@@ -81,13 +81,27 @@ output.to_csv("C:\\Users\\sivac\\Documents\\Python Projects\\Banco Santander Kag
 # PERFORMING LOGISTIC REGRESSION
 from sklearn.linear_model import LogisticRegression
 
-model = LogisticRegression(solver='lbfgs', n_jobs=-1)
-model.fit(x_train, y_train)
+model = LogisticRegression(solver='lbfgs', penalty='l2', max_iter=3000)
+model.fit(x_train_new, y_train)
 
-predictions = model.predict(x_validation)
+predictions = model.predict(x_validation_new)
 
-confusion_matrix(y_train, model.predict(x_train))
-print(classification_report(y_train, model.predict(x_train)))
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+
+confusion_matrix(y_train, model.predict(x_train_new))
+print(classification_report(y_train, model.predict(x_train_new)))
 
 confusion_matrix(y_validation, predictions)
 print(classification_report(y_validation, predictions))
+
+
+coefficients = pd.concat([pd.DataFrame(x_train.columns),pd.DataFrame(np.transpose(model.coef_))], axis = 1)
+coefficients.columns = ['Variable', 'Coeff']
+coefficients['Abs_Coeff'] = np.abs(coefficients['Coeff'])
+coefficients.sort_values('Abs_Coeff', inplace=True, ascending=False)
+coefficients.reset_index(inplace=True)
+variablesToKeep = coefficients['Variable'][0:100]
+
+x_train_new = x_train.loc[:, variablesToKeep]
+x_validation_new = x_validation.loc[:, variablesToKeep]
