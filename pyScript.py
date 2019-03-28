@@ -188,3 +188,10 @@ def col_multi(dataframe):
 dummy = pd.DataFrame({'col_A': [1,2,3,4,5], 'col_B': [6,7,8,9,10], 'col_C': [11,12,13,14,15]})
 col_multi(dummy)
 x = col_multi(x)
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/84961
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/84632
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/85039
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/84974
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/83570
+# https://www.kaggle.com/jesucristo/santander-magic-lgb-0-901
+# https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/82515
