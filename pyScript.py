@@ -25,7 +25,7 @@ from sklearn.model_selection import train_test_split
 x_train, x_validation, y_train, y_validation = train_test_split(x,y, stratify=y, random_state=1, test_size=0.25)
 
 # UNDER SAMPLING DATA
-sampleData = x_train
+sampleData = x_train.copy()
 sampleData['target'] = y_train
 
 underSample_length = len(sampleData[sampleData.target == 1])
@@ -48,6 +48,35 @@ columns = x_train.columns
 x_train,y_train =os.fit_sample(x_train, y_train)
 x_train = pd.DataFrame(data=x_train,columns=columns )
 y_train= pd.DataFrame(data=y_train,columns=['target'])
+
+# PERFORMING DIMENSIONALITY REDUCTION
+
+# STANDARDIZING FEATURES USING STANDARD SCALER
+from sklearn.preprocessing import StandardScaler
+
+stdScaler = StandardScaler()
+colNames = x_train.columns
+
+x_train = stdScaler.fit_transform(x_train)
+x_train = pd.DataFrame(data=x_train, columns=colNames)
+
+x_validation = stdScaler.fit_transform(x_validation)
+x_validation = pd.DataFrame(data=x_validation, columns=colNames)
+
+
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components=200)
+x_train = pca.fit_transform(x_train)
+pca_colNames = colNames[0:200]
+
+x_train = pd.DataFrame(data=x_train, columns=pca_colNames)
+
+np.sum(pca.explained_variance_ratio_)
+
+x_validation = pca.fit_transform(x_validation)
+x_validation = pd.DataFrame(data=x_validation, columns=pca_colNames)
+
 
 # RUNNING A BASIC RANDOM FOREST
 from sklearn.ensemble import RandomForestClassifier
@@ -105,3 +134,57 @@ variablesToKeep = coefficients['Variable'][0:100]
 
 x_train_new = x_train.loc[:, variablesToKeep]
 x_validation_new = x_validation.loc[:, variablesToKeep]
+
+# Running a Naive Bayes Guassian Model:
+# Guassian model because the predictors follow a Normal Distribution
+
+from sklearn.naive_bayes import GaussianNB
+model = GaussianNB()
+
+# Training the model using the training data
+
+model.fit(x_train, y_train)
+train_predictions = model.predict(x_train)
+predictions = model.predict(x_validation)
+
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
+
+# Confusion Matrix Comparison
+print("Confustion Matrix for Training Data")
+print(confusion_matrix(y_train, train_predictions))
+print("Confustion Matrix for Test Data")
+print(confusion_matrix(y_validation, predictions))
+
+# Classification Report Comparison
+print("Classification Report for Training Data")
+print(classification_report(y_train, train_predictions))
+print("Classification Report for Test Data")
+print(classification_report(y_validation, predictions))
+
+
+import pandas as pd
+pd.set_option('display.max_rows', 100)
+pd.set_option('display.max_columns', 100)
+pd.set_option('expand_frame_repr', False)
+
+
+
+
+def col_multi(dataframe):
+	data = dataframe.copy()
+	col_names = data.columns
+	n_col = data.shape[1]
+	i_cols = range(0, n_col)
+	print(i_cols)
+	for i in i_cols:
+		j_cols = range(i, n_col)
+		print(j_cols)
+		for j in j_cols:
+			col_name = 'multi_' + col_names[i] + '_' + col_names[j]
+			data.loc[:, col_name] = data[col_names[i]] * data[col_names[j]]
+	return(data)
+
+dummy = pd.DataFrame({'col_A': [1,2,3,4,5], 'col_B': [6,7,8,9,10], 'col_C': [11,12,13,14,15]})
+col_multi(dummy)
+x = col_multi(x)
