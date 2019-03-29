@@ -195,6 +195,8 @@ x = col_multi(x)
 # https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/83570
 # https://www.kaggle.com/jesucristo/santander-magic-lgb-0-901
 # https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/82515
+# https://www.kaggle.com/cdeotte/modified-naive-bayes-santander-0-899/notebook
+# https://www.kaggle.com/sibmike/are-vars-mixed-up-time-intervals
 
 
 import pandas as pd
