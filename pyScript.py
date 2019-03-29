@@ -195,3 +195,57 @@ x = col_multi(x)
 # https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/83570
 # https://www.kaggle.com/jesucristo/santander-magic-lgb-0-901
 # https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/82515
+
+
+import pandas as pd
+import seaborn as sns
+import numpy as np
+
+
+df = pd.DataFrame(np.random.random((100,5)), columns = list('ABCDE'))
+dfm = x_train.iloc[:,0:10].melt(var_name='columns')
+g = sns.FacetGrid(dfm, col='columns')
+g = (g.map(sns.distplot, 'value'))
+
+sns.distplot(x_train.var_6, kde=False)
+x_train.var_6.plot.hist()
+x_train.var_6.mean()
+
+np.sqrt(10)
+
+
+def custom_plot(data, start, end):
+	import matplotlib.pyplot as plt
+	new_data = data.iloc[:, start:end]
+	col_name = new_data.columns
+	div = new_data.shape[1] // 5
+	rem = new_data.shape[1] % 5
+	if rem == 0:
+		rows = div
+	else:
+		rows = div + 1
+	cols = 5
+	counter = 1
+	for i in col_name:
+		#print('cols-' + np.str(cols) + ' rows-' + np.str(rows) + ' iter-' + np.str(i))
+		plt.subplot(rows,cols,counter)
+		sns.distplot(new_data[i], kde=False)
+		plt.xlabel(i)
+		counter = counter+1
+	plt.show()
+
+
+custom_plot(df_train, start=2, end=52)
+
+
+import matplotlib.pyplot as plt
+plt.subplot(2,1,1)
+sns.distplot(x_train.iloc[:,1], kde=False)
+plt.subplot(2,1,2)
+sns.distplot(x_train.iloc[:,2], kde=False)
+plt.show()
+
+
+
+custom_plot(x_train, start=0, end=5)
+np.int(3.5)
