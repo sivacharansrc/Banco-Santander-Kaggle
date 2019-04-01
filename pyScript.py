@@ -197,6 +197,8 @@ x = col_multi(x)
 # https://www.kaggle.com/c/santander-customer-transaction-prediction/discussion/82515
 # https://www.kaggle.com/cdeotte/modified-naive-bayes-santander-0-899/notebook
 # https://www.kaggle.com/sibmike/are-vars-mixed-up-time-intervals
+# https://www.kaggle.com/blackblitz/gaussian-naive-bayes
+# https://www.kaggle.com/blackblitz/gaussian-mixture-naive-bayes
 
 
 import pandas as pd
