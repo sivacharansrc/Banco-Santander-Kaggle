@@ -63,6 +63,18 @@ x_train = pd.DataFrame(data=x_train, columns=colNames)
 x_validation = stdScaler.fit_transform(x_validation)
 x_validation = pd.DataFrame(data=x_validation, columns=colNames)
 
+# STANDARDIZING FEATURES USING QUANTILE TRANSFORMER
+from sklearn.preprocessing import QuantileTransformer
+
+quantileTransformer = QuantileTransformer(output_distribution='normal')
+colNames = x_train.columns
+
+x_train = quantileTransformer.fit_transform(x_train)
+x_train = pd.DataFrame(data=x_train, columns=colNames)
+
+x_validation = quantileTransformer.fit_transform(x_validation)
+x_validation = pd.DataFrame(data=x_validation, columns=colNames)
+
 
 from sklearn.decomposition import PCA
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20f735da-e7c6-4321-bd08-23cd50226533" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Naive Bayes Script.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pyScript.py" beforeDir="false" afterPath="$PROJECT_DIR$/pyScript.py" afterDir="false" />
     </list>
@@ -13,11 +14,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="190" column="2" lean-forward="true" selection-start-line="190" selection-start-column="2" selection-end-line="190" selection-end-column="85" />
+            <state relative-caret-position="324">
+              <caret line="119" column="185" lean-forward="true" selection-start-line="114" selection-end-line="119" selection-end-column="185" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Naive Bayes Script.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="125" column="152" selection-start-line="125" selection-start-column="152" selection-end-line="125" selection-end-column="152" />
             </state>
           </provider>
         </entry>
@@ -38,13 +48,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pyScript.py" />
+        <option value="$PROJECT_DIR$/Naive Bayes Script.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1279" />
-    <option name="width" value="1282" />
-    <option name="height" value="1033" />
+    <option name="width" value="1281" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -97,10 +107,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
+    <frame x="-8" y="-8" width="2152" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24976349" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -122,8 +132,15 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pyScript.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="190" column="2" lean-forward="true" selection-start-line="190" selection-start-column="2" selection-end-line="190" selection-end-column="85" />
+        <state relative-caret-position="324">
+          <caret line="119" column="185" lean-forward="true" selection-start-line="114" selection-end-line="119" selection-end-column="185" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Naive Bayes Script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="125" column="152" selection-start-line="125" selection-start-column="152" selection-end-line="125" selection-end-column="152" />
         </state>
       </provider>
     </entry>
